@@ -9,6 +9,20 @@ import java.util.StringTokenizer;
 //
 //        1부터 N까지 자연수 중에서 중복 없이 M개를 고른 수열
 
+//   입력: 4 2
+//   출력: 1 2
+//        1 3
+//        1 4
+//        2 1
+//        2 3
+//        2 4
+//        3 1
+//        3 2
+//        3 4
+//        4 1
+//        4 2
+//        4 3
+
 public class N_N과M {
     static StringBuilder sb;
     static int N;
