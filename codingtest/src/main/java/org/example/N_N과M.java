@@ -19,7 +19,14 @@ public class N_N과M {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
+        N = Integer.parseInt(st.nextToken());
+        M = Integer.parseInt(st.nextToken());
+        intArr = new int[M];
+        checkArr = new boolean[N+1];
+        sb = new StringBuilder();
 
+        backTracking(0);
+        System.out.println(sb);
     }
 
     public static void backTracking(int num) {
