@@ -9,6 +9,37 @@ public class N_BFSDFS {
     static ArrayList<Integer>[] graph;
     static boolean [] visited;
 
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
+
+        int N = Integer.parseInt(stringTokenizer.nextToken());
+        int M = Integer.parseInt(stringTokenizer.nextToken());
+        int s = Integer.parseInt(stringTokenizer.nextToken());
+        graph = new ArrayList[N+1];
+
+        for (int i=1; i<=N; i++) {
+            graph[i] = new ArrayList<Integer>();
+
+        }
+        for (int i=0; i<M; i++){
+            stringTokenizer = new StringTokenizer(bufferedReader.readLine());
+            int node1 = Integer.parseInt(stringTokenizer.nextToken());
+            int node2 = Integer.parseInt(stringTokenizer.nextToken());
+
+            graph[node1].add(node2);
+            graph[node2].add(node1);
+        }
+        for (int i=1; i<=N; i++) {
+            Collections.sort(graph[i]); // 작은 것부터 정렬
+        }
+        visited = new boolean[N+1];
+        DFS(s);
+        System.out.println();
+        visited = new boolean[N+1];
+        BFS(s);
+        System.out.println();
+    }
 
     public static void DFS(int node) { // DFS 구현하기
         System.out.print(node + " ");
